@@ -8,6 +8,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { TokenComponent } from './token/token.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { GraficaComponent } from './grafica/grafica.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     DashboardComponent,
     UsuariosComponent,
     TokenComponent,
-    PerfilComponent
+    PerfilComponent,
+    GraficaComponent
   ],
   imports: [
     CommonModule,
