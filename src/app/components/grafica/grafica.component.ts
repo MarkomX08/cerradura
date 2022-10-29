@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import io from 'socket.io-client';
 
+const socket =io('http://localhost:4300')
 
 @Component({
   selector: 'app-grafica',
