@@ -1,6 +1,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar bg-gradient-to-r from-emerald-500 to-lime-500 ">
-      <h1 class="example-app-name text-white">Cerradura Inteligente</h1>
+      <mat-icon style="color: white;">home</mat-icon>
+      <h1 class="example-app-name text-white">Warm-house</h1>
     </mat-toolbar>
     
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -47,39 +48,27 @@
                   <div>Usuarios</div>
                 </button>
               </div>
-
-              <!-- <div class="flex justify-center">
-                <button routerLinkActive 
-                  #token = "routerLinkActive" 
-                  routerLink="/components/token" 
-                  class="grid grid-cols-2 place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">verified_user</mat-icon>
-                  </div>
-                  <div>Crear Token</div>
-                </button>
-              </div>
-              
-              <div class="flex justify-center">
-                <button routerLinkActive 
-                  #perfil = "routerLinkActive" 
-                  routerLink="/components/perfil" 
-                  class="grid grid-cols-2 place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">account_box</mat-icon>
-                  </div>
-                  <div>Perfil</div>
-                </button>
-              </div> -->
-              
-
             </li>
 
           </ul>
         </mat-nav-list>
       </mat-sidenav>
-  
-        <div class="flex justify-center bg-cover ">
+      <div class="container">
+        <div class="row">
+          <div class="columns-4 columns-auto font-bold">Agregar nuevo usuario</div>
+          <div class="columns-7 columns-auto">
+            <button 
+            routerLinkActive 
+                  #dashboard = "routerLinkActive" 
+                  routerLink="/components/agregar" 
+            class="place-items-center font-bold
+             text-black rounded-full bg-emerald-400 
+             border-2 my-2
+             hover:bg-white hover:text-emerald-500">Agregar</button>
+          </div>
+        </div>
+      </div>
+        <div class="flex justify-center bg-cover columns-auto">
           <table class="w-10/12	h-fit	my-10 border-separate border-spacing-2">
             <thead>
               <tr>
@@ -95,8 +84,18 @@
                 <th scope="col">{{l.nombre}}</th>
                 <th scope="col">{{l.rol}}</th>
                 <th scope="col">
-                  <button class="btn">Actualizar</button>
-                  <button class="btn">Eliminar</button>
+                  <button routerLinkActive 
+                  #dashboard = "routerLinkActive" 
+                  [routerLink]="['/components/update', l.id]"
+                   class="place-items-center
+             text-black rounded-full bg-emerald-400 
+             border-2 w-100%
+             hover:bg-white hover:text-emerald-500">Actualizar</button>
+             <button (click)="delete(l.id)"
+             class="place-items-center
+             text-black rounded-full bg-emerald-400 
+             border-2 w-100% 
+             hover:bg-white hover:text-emerald-500">Eliminar</button>
                 </th>
               </tr>
             </thead>

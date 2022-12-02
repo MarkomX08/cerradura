@@ -1,3 +1,4 @@
+
 .example-container {
     display: flex;
     flex-direction: column;
@@ -28,26 +29,4 @@
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
-  }
-  th{
-    color: white;
-    background-color: #661F3A;
-    border-color: white;
-    text-align:  center;
-}
-table{
-    border: 10px;
-    background-color: gray;
-    border-radius: 10px;
-    border-color:black;
-}
-
-@media print{
-  th{
-    color:black;
-  }
-    .oculto-impresion, .oculto-impresion *{
-      display: none !important;
-      color: black;
-    }
   }

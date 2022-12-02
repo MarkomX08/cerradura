@@ -5,21 +5,25 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { MaterialModule } from '../Materials/material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { NgChartsModule } from 'ng2-charts';
+import { AgregarComponent } from './agregar/agregar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    PerfilComponent,
     GraficaComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    AgregarComponent,
+    UpdateComponent
   ],
   imports: [
     CommonModule,
     ComponentsRoutingModule,
+    ReactiveFormsModule,
     MaterialModule,
     NgChartsModule
   ]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { withLatestFrom } from 'rxjs';
 
 @Component({
   selector: 'app-grafica',
@@ -13,12 +14,17 @@ export class GraficaComponent implements OnInit {
 
   public lineChartTemp: Array<any> = [
     { data: [], 
-      label: 'Temperatura'}
+      label: 'Temperatura',
+      borderColor: 'rgb(255, 93, 51)',
+      backgroundColor: 'rgb(255, 9, 51)'
+    }
   ];
-
+  
   public lineChartRain: Array<any> = [
     { data: [], 
-      label: 'lluvia'}
+      label: 'lluvia',
+      backgroundColor: 'rgb(51, 23, 255)',
+      borderColor: 'rgb(51, 230, 255)'}
   ];
 
   public lineChartLabels: Array<any> = [];

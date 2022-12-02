@@ -48,32 +48,6 @@
                   <div>Usuarios</div>
                 </button>
               </div>
-
-              <!-- <div class="flex justify-center">
-                <button routerLinkActive 
-                  #token = "routerLinkActive" 
-                  routerLink="/components/token" 
-                  class="grid grid-cols-2 place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">verified_user</mat-icon>
-                  </div>
-                  <div>Crear Token</div>
-                </button>
-              </div>
-              
-              <div class="flex justify-center">
-                <button routerLinkActive 
-                  #perfil = "routerLinkActive" 
-                  routerLink="/components/perfil" 
-                  class="grid grid-cols-2 place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">account_box</mat-icon>
-                  </div>
-                  <div>Perfil</div>
-                </button>
-              </div> -->
-              
-
             </li>
 
           </ul>
@@ -81,7 +55,63 @@
       </mat-sidenav>
       
       <mat-sidenav-content>
-        <app-grafica></app-grafica>
+
+        <h1>MODIFICACION DE USUARIO</h1>
+          <div class="flex justify-center bg-cover columns-auto">
+            <form class="ng-dirty ng-touched ng-valid" [formGroup]="Formulario">
+              <!-- Campo de Nombre -->
+              <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label">Nombre del Usuario</label>
+                  <div class="col-sm-9">
+  
+                      <input type="text" class="form-control" name="nombre" formControlName="nombre"
+                          placeholder="Inserte el nombre del usuario">
+  
+                      <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+                          Debe de ser de 3 letras
+                      </span>
+                  </div>
+              </div>
+              <!-- Campo de Apellido -->
+              <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label">Apellido del Usuario</label>
+                  <div class="col-sm-9">
+  
+                      <input type="text" class="form-control" name="apellido" formControlName="apellido"
+                          placeholder="Inserte el apellido del usuario">
+  
+                      <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+                          Debe de ser de 3 letras
+                      </span>
+                  </div>
+              </div> 
+
+              <!-- Campo de correo -->
+              <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label">correo del Usuario</label>
+                  <div class="col-sm-9">
+  
+                      <input type="text" class="form-control" name="correo" formControlName="correo"
+                          placeholder="Inserte el correo del usuario">
+  
+                      <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
+                          Debe de ser de 3 letras
+                      </span>
+                  </div>
+              </div>
+
+              <div>
+                <button class="place-items-center
+                text-black rounded-full bg-emerald-400 
+                border-2 w-100% 
+                hover:bg-white hover:text-emerald-500" 
+                (click)="guardar()" [disabled]="!Formulario.valid">
+                        Guardar
+                          <i aria-hidden="true" class="fa fa-floppy-o"></i>
+                      </button>
+                  </div>
+          </form>
+          </div>
       </mat-sidenav-content>
     </mat-sidenav-container>
 
