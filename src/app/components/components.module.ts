@@ -5,25 +5,23 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { MaterialModule } from '../Materials/material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { TokenComponent } from './token/token.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { NgApexchartsModule } from 'ng-apexcharts';
 import { GraficaComponent } from './grafica/grafica.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    UsuariosComponent,
-    TokenComponent,
     PerfilComponent,
-    GraficaComponent
+    GraficaComponent,
+    UsuariosComponent
   ],
   imports: [
     CommonModule,
     ComponentsRoutingModule,
     MaterialModule,
-    NgApexchartsModule
+    NgChartsModule
   ]
 })
 export class ComponentsModule { }

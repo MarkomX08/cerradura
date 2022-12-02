@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Chart from 'chart.js/auto';
-import io from 'socket.io-client';
-
-const socket =io('http://localhost:4300')
+import { HttpClient } from '@angular/common/http';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-grafica',
@@ -10,33 +8,57 @@ const socket =io('http://localhost:4300')
   styleUrls: ['./grafica.component.scss']
 })
 export class GraficaComponent implements OnInit {
-  public chart: any;
-  constructor() { }
+  public temperatura:any
+  public lluvia:any
 
-  ngOnInit(): void {
-    this.createChart();
+  public lineChartTemp: Array<any> = [
+    { data: [], 
+      label: 'Temperatura'}
+  ];
+
+  public lineChartRain: Array<any> = [
+    { data: [], 
+      label: 'lluvia'}
+  ];
+
+  public lineChartLabels: Array<any> = [];
+
+  constructor(
+    private http: HttpClient,
+    public wsService: WebsocketService
+  ) {
+
   }
-  createChart(){
 
-    this.chart = new Chart("MyChart", {
-      type: 'line', //this denotes tha type of chart
+  ngOnInit() {
+    this.getData();
+    this.escucharSocket();
+  }
 
-      data: {// values on X-Axis
-        labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
-								 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17', ], 
-	       datasets: [
-          {
-            label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
-            backgroundColor: 'blue'
-          }
-        ]
-      },
-      options: {
-        aspectRatio:2.5
-      }
-      
-    });
+  getData() {
+
+    this.http.get('http://localhost:4003/grafica')
+      .subscribe( (data: any) =>{
+        // console.log(data); 
+        this.temperatura = data.temperatura;
+        this.lluvia =data.lluvia;
+        this.lineChartTemp = data.datotemperatura;
+        this.lineChartRain = data.datolluvia;
+        this.lineChartLabels = data.labelsxMin;
+        //console.log(this.lineChartLabels); 
+      }  );
+  }
+
+  escucharSocket() {
+    this.wsService.listen('cambio-grafica')
+      .subscribe( (data: any) => {
+        console.log('socket', data);
+        this.temperatura = data.temperatura;
+        this.lluvia = data.lluvia;
+        this.lineChartTemp = data.datotemperatura;
+        this.lineChartRain = data.datolluvia;
+        this.lineChartLabels = data.labelsxMin;
+      });
+
   }
 }

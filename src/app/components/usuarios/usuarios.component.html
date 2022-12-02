@@ -83,16 +83,21 @@
           <table class="w-10/12	h-fit	my-10 border-separate border-spacing-2">
             <thead>
               <tr>
+                <th scope="col">id</th>
                 <th scope="col">nombre</th>
-                <th scope="col">numero de tarjeta</th>
                 <th scope="col">rol</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <thead *ngFor="let l of Lista">
               <tr>
+                <th scope="col">{{l.id}}</th>
                 <th scope="col">{{l.nombre}}</th>
-                <th scope="col">{{l.num}}</th>
                 <th scope="col">{{l.rol}}</th>
+                <th scope="col">
+                  <button class="btn">Actualizar</button>
+                  <button class="btn">Eliminar</button>
+                </th>
               </tr>
             </thead>
           </table>

@@ -1,7 +1,36 @@
-<div class="">
-    <p>grafica works!</p>
-        <div class="chart-container w-10/12 flex justify-center">
-            <canvas  id="MyChart" >{{ chart }}</canvas>
-        </div>
-</div>
+<h1>Gráfica de Temperatura</h1>
+<hr>
 
+<div class="row">
+  <div class="col-md-6">
+
+      <div style="display: block; width: 800px; height: 400px;">
+          <canvas baseChart 
+          
+                      [datasets]="lineChartTemp"
+                      [labels]="lineChartLabels"
+                      
+                      [type]="'line'">
+            </canvas>
+      </div>
+
+  </div>
+</div>
+<h1>Gráfica de lluvia</h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-6">
+
+      <div style="display: block; width: 800px; height: 400px;">
+          <canvas baseChart 
+          
+                      [datasets]="lineChartRain"
+                      [labels]="lineChartLabels"
+                      
+                      [type]="'line'">
+            </canvas>
+      </div>
+
+  </div>
+</div>
