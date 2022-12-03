@@ -43,7 +43,7 @@ export class GraficaComponent implements OnInit {
 
   getData() {
 
-    this.http.get('http://localhost:4003/grafica')
+    this.http.get('https://58ed-201-159-192-203.ngrok.io/grafica')
       .subscribe( (data: any) =>{
         // console.log(data); 
         this.temperatura = data.temperatura;
