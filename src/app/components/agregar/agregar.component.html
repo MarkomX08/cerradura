@@ -1,7 +1,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar bg-gradient-to-r from-emerald-500 to-lime-500 ">
       <mat-icon style="color: white;">home</mat-icon>
-      <h1 class="example-app-name text-white">Warm-house</h1>
+      <h1 class="example-app-name text-white" [routerLink]="['./component/dashboard']">Warm-house</h1>
     </mat-toolbar>
     
     <mat-sidenav-container class="example-sidenav-container " [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -29,7 +29,7 @@
                 <button routerLinkActive 
                   #dashboard = "routerLinkActive" 
                   routerLink="/components/dasboard" 
-                  class="place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
+                  class="place-items-center rounded-lg bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
                   <div>
                     <mat-icon class="text-center">dashboard</mat-icon>
                   </div>
@@ -41,7 +41,7 @@
                 <button routerLinkActive 
                   #usuarios = "routerLinkActive" 
                   routerLink="/components/usuarios" 
-                  class="place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
+                  class="place-items-center rounded-lg bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
                   <div>
                     <mat-icon class="text-center">account_circle</mat-icon> 
                   </div>
@@ -55,75 +55,112 @@
       </mat-sidenav>
       
       <mat-sidenav-content>
-        <h1>Agregar usuario</h1>
-          <div class="flex justify-center bg-cover columns-auto">
-            <form class="ng-dirty ng-touched ng-valid" [formGroup]="Formulario">
-              <!-- Campo de Nombre -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Nombre del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="nombre" formControlName="nombre"
-                          placeholder="Inserte el nombre del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div>
-              <!-- Campo de Apellido -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Apellido del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="apellido" formControlName="apellido"
-                          placeholder="Inserte el apellido del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div> 
+        <div class="flex justify-center">
+          <h1 class="pt-6">Agregar usuario</h1>
+        </div>
+        <form [formGroup]="Formulario" style="width: 70%; margin-left: 15%;">
+          <!-- campo de nombre del usuario -->
+          <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre del nuevo usuario</label>
+            <input type="text"
+            formControlName="nombre"
+             id="nombre" 
+             name="nombre"
+             class="form-control shadow-sm bg-gray-50 
+             border border-gray-300 
+             text-gray-900 text-sm 
+             rounded-lg focus:ring-blue-500 
+             focus:border-blue-500 block w-full 
+             p-2.5 dark:bg-gray-700 
+             dark:border-gray-600 dark:placeholder-gray-400 
+             dark:text-white dark:focus:ring-blue-500 
+             dark:focus:border-blue-500 dark:shadow-sm-light"
+              placeholder="Inserte el nombre del usuario">
 
-              <!-- Campo de correo -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">correo del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="correo" formControlName="correo"
-                          placeholder="Inserte el correo del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div>  
-              <!-- Campo de contra -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">contraeña del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="password" class="form-control" name="contrasena" formControlName="contrasena"
-                          placeholder="Inserte una contraseña">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('contrasena')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div>  
-
-              <div>
-                <button class="place-items-center
-                text-black rounded-full bg-emerald-400 
-                border-2 w-100% 
-                hover:bg-white hover:text-emerald-500" 
-                (click)="guardar2()" [disabled]="!Formulario.valid">
-                        Guardar
-                          <i aria-hidden="true" class="fa fa-floppy-o"></i>
-                      </button>
-                  </div>
-          </form>
+            <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+                Debe de ser de 3 letras
+            </span>
           </div>
+
+
+          <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido del nuevo usuario</label>
+            <input type="text"
+            formControlName="apellido"
+             id="apellido" 
+             name="apellido"
+             class="form-control shadow-sm bg-gray-50 
+             border border-gray-300 
+             text-gray-900 text-sm 
+             rounded-lg focus:ring-blue-500 
+             focus:border-blue-500 block w-full 
+             p-2.5 dark:bg-gray-700 
+             dark:border-gray-600 dark:placeholder-gray-400 
+             dark:text-white dark:focus:ring-blue-500 
+             dark:focus:border-blue-500 dark:shadow-sm-light"
+              placeholder="Inserte el apellido del usuario">
+
+            <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+                Debe de ser de 3 letras
+            </span>
+          </div>
+
+          
+          <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo del nuevo usuario</label>
+            <input type="text"
+            formControlName="correo"
+             id="correo" 
+             name="coreo"
+             class="form-control shadow-sm bg-gray-50 
+             border border-gray-300 
+             text-gray-900 text-sm 
+             rounded-lg focus:ring-blue-500 
+             focus:border-blue-500 block w-full 
+             p-2.5 dark:bg-gray-700 
+             dark:border-gray-600 dark:placeholder-gray-400 
+             dark:text-white dark:focus:ring-blue-500 
+             dark:focus:border-blue-500 dark:shadow-sm-light"
+              placeholder="Inserte el correo del usuario">
+
+            <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
+                Debe de ser de 3 letras
+            </span>
+          </div>
+          <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+            <input type="password"
+            formControlName="contrasena"
+             id="contrasena" 
+             name="contrasena"
+             class="form-control shadow-sm bg-gray-50 
+             border border-gray-300 
+             text-gray-900 text-sm 
+             rounded-lg focus:ring-blue-500 
+             focus:border-blue-500 block w-full 
+             p-2.5 dark:bg-gray-700 
+             dark:border-gray-600 dark:placeholder-gray-400 
+             dark:text-white dark:focus:ring-blue-500 
+             dark:focus:border-blue-500 dark:shadow-sm-light"
+              placeholder="Inserte el nombre del usuario">
+
+            <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+                Debe de ser de 3 letras
+            </span>
+          </div>
+          <button 
+          class="text-black 
+          bg-emerald-400 hover:bg-white hover:text-emerald-500
+          border-2
+          focus:ring-4 focus:outline-none 
+          focus:ring-blue-300 font-medium 
+          rounded-lg text-sm px-5 py-2.5 
+          text-center dark:bg-blue-600 
+          dark:hover:bg-blue-700 
+          dark:focus:ring-blue-800"
+          (click)="guardar2()" [disabled]="!Formulario.valid"> nuevo usuario</button>
+        </form>
+
       </mat-sidenav-content>
     </mat-sidenav-container>
 

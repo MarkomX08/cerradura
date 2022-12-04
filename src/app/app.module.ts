@@ -9,8 +9,8 @@ import { MaterialModule } from './Materials/material.module';
 import { NgChartsModule } from 'ng2-charts';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = {url: 'https://58ed-201-159-192-203.ngrok.io',options:{transports: ['websocket', 'polling', 'flashsocket']}};
-
+const config: SocketIoConfig = {url: 'http://localhost:4003/',options:{}};
+// url: 'https://58ed-201-159-192-203.ngrok.io',options{transports: ['websocket', 'polling', 'flashsocket']}}
 @NgModule({
   declarations: [
     AppComponent

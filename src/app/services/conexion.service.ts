@@ -5,8 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ConexionService {
-  //baseUrl = 'http://localhost:800/webServicePWE2/controller/';
-  baseUrl = 'https://97db-201-159-192-203.ngrok.io/webServicePWE2/controller/';
+  baseUrl = 'http://localhost:800/webServicePWE2/controller/';
+  // baseUrl = 'https://97db-201-159-192-203.ngrok.io/webServicePWE2/controller/';
   public httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8',

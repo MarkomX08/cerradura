@@ -1,118 +1,146 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar class="example-toolbar bg-gradient-to-r from-emerald-500 to-lime-500 ">
-      <mat-icon style="color: white;">home</mat-icon>
-      <h1 class="example-app-name text-white">Warm-house</h1>
-    </mat-toolbar>
-    
-    <mat-sidenav-container class="example-sidenav-container " [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav class="border-1 border-emerald-400  place-content-center" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened>
-        
-        <mat-nav-list>
-          <div class="flex justify-center">
-            <img 
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC"
-              class="rounded-full h-16 w-16" 
-              alt="Not found">
-          </div>
-          <div class="flex justify-center pt-1">
-            <p class="font-bold text-slate-800">Inserte nombre aqui</p>
-          </div>
-          <div class="flex justify-center">
-            <p class="text-slate-500">inserte puesto aqui</p>
-          </div>
-
-          <!-- navegacion entre componentes -->
-          <ul class="text-white">
-
-            <li>
-              <div class="flex justify-center">
-                <button routerLinkActive 
-                  #dashboard = "routerLinkActive" 
-                  routerLink="/components/dasboard" 
-                  class="place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">dashboard</mat-icon>
-                  </div>
-                  <div>Dashboard</div>
-                </button>
-              </div>
-
-              <div class="flex justify-center">
-                <button routerLinkActive 
-                  #usuarios = "routerLinkActive" 
-                  routerLink="/components/usuarios" 
-                  class="place-items-center rounded-full bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
-                  <div>
-                    <mat-icon class="text-center">account_circle</mat-icon> 
-                  </div>
-                  <div>Usuarios</div>
-                </button>
-              </div>
-            </li>
-
-          </ul>
-        </mat-nav-list>
-      </mat-sidenav>
+  <mat-toolbar class="example-toolbar bg-gradient-to-r from-emerald-500 to-lime-500 ">
+    <mat-icon style="color: white;">home</mat-icon>
+    <h1 class="example-app-name text-white" [routerLink]="['./component/dashboard']">Warm-house</h1>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-sidenav-container " [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav class="border-1 border-emerald-400  place-content-center" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened>
       
-      <mat-sidenav-content>
+      <mat-nav-list>
+        <div class="flex justify-center">
+          <img 
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC"
+            class="rounded-full h-16 w-16" 
+            alt="Not found">
+        </div>
+        <div class="flex justify-center pt-1">
+          <p class="font-bold text-slate-800">Inserte nombre aqui</p>
+        </div>
+        <div class="flex justify-center">
+          <p class="text-slate-500">inserte puesto aqui</p>
+        </div>
 
-        <h1>MODIFICACION DE USUARIO</h1>
-          <div class="flex justify-center bg-cover columns-auto">
-            <form class="ng-dirty ng-touched ng-valid" [formGroup]="Formulario">
-              <!-- Campo de Nombre -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Nombre del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="nombre" formControlName="nombre"
-                          placeholder="Inserte el nombre del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div>
-              <!-- Campo de Apellido -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Apellido del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="apellido" formControlName="apellido"
-                          placeholder="Inserte el apellido del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div> 
+        <!-- navegacion entre componentes -->
+        <ul class="text-white">
 
-              <!-- Campo de correo -->
-              <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">correo del Usuario</label>
-                  <div class="col-sm-9">
-  
-                      <input type="text" class="form-control" name="correo" formControlName="correo"
-                          placeholder="Inserte el correo del usuario">
-  
-                      <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
-                          Debe de ser de 3 letras
-                      </span>
-                  </div>
-              </div>
+          <li>
+            <div class="flex justify-center">
+              <button routerLinkActive 
+                #dashboard = "routerLinkActive" 
+                routerLink="/components/dasboard" 
+                class="place-items-center rounded-lg bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
+                <div>
+                  <mat-icon class="text-center">dashboard</mat-icon>
+                </div>
+                <div>Dashboard</div>
+              </button>
+            </div>
 
-              <div>
-                <button class="place-items-center
-                text-black rounded-full bg-emerald-400 
-                border-2 w-100% 
-                hover:bg-white hover:text-emerald-500" 
-                (click)="guardar()" [disabled]="!Formulario.valid">
-                        Guardar
-                          <i aria-hidden="true" class="fa fa-floppy-o"></i>
-                      </button>
-                  </div>
-          </form>
-          </div>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+            <div class="flex justify-center">
+              <button routerLinkActive 
+                #usuarios = "routerLinkActive" 
+                routerLink="/components/usuarios" 
+                class="place-items-center rounded-lg bg-emerald-400 border-2 my-2 w-full hover:bg-white hover:text-emerald-500">
+                <div>
+                  <mat-icon class="text-center">account_circle</mat-icon> 
+                </div>
+                <div>Usuarios</div>
+              </button>
+            </div>
+          </li>
+
+        </ul>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <div class="flex justify-center">
+        <h1>Actualizacion del Usuario.</h1>
+      </div>
+      <form [formGroup]="Formulario" style="width: 70%; margin-left:15%;">
+        <!-- campo de nombre del usuario -->
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre del usuario</label>
+          <input type="text"
+          formControlName="nombre"
+           id="nombre" 
+           name="nombre"
+           class="form-control shadow-sm bg-gray-50 
+           border border-gray-300 
+           text-gray-900 text-sm 
+           rounded-lg focus:ring-blue-500 
+           focus:border-blue-500 block w-full 
+           p-2.5 dark:bg-gray-700 
+           dark:border-gray-600 dark:placeholder-gray-400 
+           dark:text-white dark:focus:ring-blue-500 
+           dark:focus:border-blue-500 dark:shadow-sm-light"
+            placeholder="Inserte el nombre del usuario">
+
+          <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+              Debe de ser de 3 letras
+          </span>
+        </div>
+
+
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido del usuario</label>
+          <input type="text"
+          formControlName="apellido"
+           id="apellido" 
+           name="apellido"
+           class="form-control shadow-sm bg-gray-50 
+           border border-gray-300 
+           text-gray-900 text-sm 
+           rounded-lg focus:ring-blue-500 
+           focus:border-blue-500 block w-full 
+           p-2.5 dark:bg-gray-700 
+           dark:border-gray-600 dark:placeholder-gray-400 
+           dark:text-white dark:focus:ring-blue-500 
+           dark:focus:border-blue-500 dark:shadow-sm-light"
+            placeholder="Inserte el apellido del usuario">
+
+          <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+              Debe de ser de 3 letras
+          </span>
+        </div>
+
+        
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo del usuario</label>
+          <input type="text"
+          formControlName="correo"
+           id="correo" 
+           name="coreo"
+           class="form-control shadow-sm bg-gray-50 
+           border border-gray-300 
+           text-gray-900 text-sm 
+           rounded-lg focus:ring-blue-500 
+           focus:border-blue-500 block w-full 
+           p-2.5 dark:bg-gray-700 
+           dark:border-gray-600 dark:placeholder-gray-400 
+           dark:text-white dark:focus:ring-blue-500 
+           dark:focus:border-blue-500 dark:shadow-sm-light"
+            placeholder="Inserte el correo del usuario">
+
+          <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
+              Debe de ser de 3 letras
+          </span>
+        </div>
+        <button 
+        class="text-black 
+        bg-emerald-400 hover:bg-white hover:text-emerald-500
+        border-2
+        focus:ring-4 focus:outline-none 
+        focus:ring-blue-300 font-medium 
+        rounded-lg text-sm px-5 py-2.5 
+        text-center dark:bg-blue-600 
+        dark:hover:bg-blue-700 
+        dark:focus:ring-blue-800"
+        (click)="guardar()" [disabled]="!Formulario.valid">Actualizar usuario</button>
+      </form>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
 </div>

@@ -38,6 +38,7 @@ export class AgregarComponent implements OnInit, OnDestroy {
     private ps:SeguridadService,
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher) {
+      
     const id = this.activedRouter.snapshot.params['id'];
     this.ObtenerRegistro(id);
 
