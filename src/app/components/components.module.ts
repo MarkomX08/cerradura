@@ -10,7 +10,13 @@ import { NgChartsModule } from 'ng2-charts';
 import { AgregarComponent } from './agregar/agregar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateComponent } from './update/update.component';
+import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,14 +24,20 @@ import { UpdateComponent } from './update/update.component';
     GraficaComponent,
     UsuariosComponent,
     AgregarComponent,
-    UpdateComponent
+    UpdateComponent,
+    NewDashboardComponent
   ],
   imports: [
     CommonModule,
     ComponentsRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
-    NgChartsModule
+    NgChartsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule
   ]
 })
 export class ComponentsModule { }

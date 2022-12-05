@@ -1,10 +1,19 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar class="example-toolbar bg-gradient-to-r from-emerald-500 to-lime-500 ">
+    <button mat-icon-button class="text-white
+          bg-transparent hover:bg-white hover:text-emerald-500
+          border-2 text-sm px-5 py-2.5 
+          text-center dark:bg-blue-600 pr-2
+          dark:hover:bg-blue-700 
+          dark:focus:ring-blue-800">
+      <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+    </button>
+    <mat-icon style="color: white;">home</mat-icon>
     <h1 class="example-app-name text-white" [routerLink]="['./component/dashboard']">Warm-house</h1>
   </mat-toolbar>
   
   <mat-sidenav-container class="example-sidenav-container " [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav class="border-1 border-emerald-400  place-content-center" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened>
+    <mat-sidenav #sidenav class="border-1 border-emerald-400  place-content-center" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened>
       
       <mat-nav-list>
         <div class="flex justify-center">
@@ -14,10 +23,10 @@
             alt="Not found">
         </div>
         <div class="flex justify-center pt-1">
-          <p class="font-bold text-slate-800">Inserte nombre aqui</p>
+          <p class="font-bold text-slate-800">Marco Gonzalez</p>
         </div>
         <div class="flex justify-center">
-          <p class="text-slate-500">inserte puesto aqui</p>
+          <p class="text-slate-500">Administrador</p>
         </div>
 
         <!-- navegacion entre componentes -->
